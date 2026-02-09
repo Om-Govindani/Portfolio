@@ -8,7 +8,7 @@ import { SiCodeforces } from "react-icons/si";
 
 export default function StickyCard(){
     return(
-        <div className="relative lg:h-160 lg:w-86 md:w-195.25 md:h-135 sm:w-120 sm:h-115.25 w-120 h-115.25 bg-white rounded-2xl overflow-hidden ease-in-out transition-all duration-300">
+        <div className=" lg:sticky lg:top-[30px] relative lg:h-160 lg:w-86 md:w-195.25 md:h-135 sm:w-120 sm:h-115.25 w-120 h-115.25 bg-white rounded-2xl overflow-hidden ease-in-out transition-all duration-300 lg:flex-none">
             <img src={joint2} alt="joint2" className='absolute lg:top-0 lg:left-0 md:left-32 md:-top-8 sm:left-2 sm:-top-6 left-2 -top-6 w-48.5 h-25' />
             <img src={joint1} alt="joint1" className='absolute lg:bottom-33 lg:-left-35 md:bottom-16 md:-left-32 sm:-left-50 sm:bottom-43 -left-50 bottom-43 w-67.5 h-41.5 ' />
             <div className='w-full h-full flex flex-col items-center ease-in-out transition-all duration-300 py-7.5 px-5 gap-6'>
