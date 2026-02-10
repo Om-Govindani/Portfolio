@@ -14,10 +14,10 @@ export const ScrollStackItem = ({ children, index, image }) => {
         backgroundColor: `rgb(${18 + index * 8}, ${18 + index * 8}, ${18 + index * 8})`,
       }}
     >
-      {/* Background Image Logic: Hover pe opacity badhegi */}
+      
       {image && (
         <div 
-          className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
+          className="absolute inset-0 w-full h-full opacity-20 md:opacity-0 lg:opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
           style={{
             backgroundImage: `url(${image})`,
             backgroundSize: 'cover',
@@ -27,7 +27,7 @@ export const ScrollStackItem = ({ children, index, image }) => {
         />
       )}
 
-      {/* Content Layer (Relative taaki image ke upar dikhe) */}
+      
       <div className="relative z-10 flex flex-col h-full">
         {children}
       </div>

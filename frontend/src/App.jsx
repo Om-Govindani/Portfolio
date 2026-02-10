@@ -4,29 +4,39 @@ import ConnectionForm from './components/ConnectionForm'
 import Projects from './components/Projects'
 import SmoothScroll from './components/SmoothScroll'
 import "./App.css"
+import Achievements from './components/Achievements'
+import Intro from './components/Intro'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <SmoothScroll>
-      <div className='bg-neutral-900 w-full min-w-screen min-h-screen poppins flex justify-center select-none'>
-        {/* Main Layout Container */}
-        <div className='w-full max-w-189 lg:max-w-285 items-center lg:items-start p-7.5 lg:p-10 bg-transparent h-fit flex flex-col lg:flex-row gap-[50px]'>
-          
+      <Navbar />
+      <div className='w-full min-w-screen min-h-screen poppins flex justify-center select-none mt-10'>
+        <div className='w-full max-w-189 lg:max-w-285 items-center lg:items-start p-7.5 lg:p-10 bg-transparent h-fit flex flex-col lg:flex-row gap-[25px]'> 
           <StickyCard />
+          <div className='h-fit w-full flex flex-col gap-15 '>
 
-          <div className='h-fit w-full flex flex-col gap-20 lg:gap-24'>
-            {/* Reveal Wrapper for Toolbox */}
-            <section className="reveal">
+            <section id="home" className="reveal">
+              <Intro />
+            </section>
+
+            
+            <section id="toolbox" className="reveal">
               <DeveloperToolbox />
             </section>
 
-            {/* Projects already has internal sticky logic, but we can add reveal to title */}
-            <section className="reveal">
+            <section id="achievements" className="reveal">
+              <Achievements />
+            </section>
+
+            
+            <section id="projects" className="reveal">
               <Projects />
             </section>
 
-            {/* Reveal Wrapper for Form */}
-            <section className="reveal">
+            
+            <section id="contact" className="reveal">
               <ConnectionForm />
             </section>
           </div>
