@@ -1,10 +1,30 @@
 import ScrollStack, { ScrollStackItem } from './ScrollStack'
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function Projects() {
+    const [isPinned, setIsPinned] = useState(true);
+    const sectionRef = useRef(null);
+    const endRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Agar stack ka end (endRef) screen par aa gaya, toh sticky band kardo
+                setIsPinned(!entry.isIntersecting);
+            },
+            { threshold: 0.1 }
+        );
+
+        if (endRef.current) {
+            observer.observe(endRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
     return (
-        <div className='relative w-full h-fit gap-8'>
+        <div ref={sectionRef} className='relative w-full h-fit gap-8'>
             
-            <div className='sticky top-0 pt-4 z-[100] bg-neutral-900 shadow-none w-full h-[176px] flex flex-col justify-center text-[50px] md:text-[90px] font-bold leading-none text-center lg:text-left'>
+            <div className={`${isPinned ? 'sticky top-0' : 'relative'} pt-4 z-[100] bg-neutral-900 shadow-none w-full h-[176px] flex flex-col justify-center text-[50px] md:text-[90px] font-bold leading-none text-center lg:text-left`}>
                 <div className='text-white'>PROJECT</div>
                 <div className='text-[rgb(54,51,52)]'>SHOWCASE</div>
             </div>
@@ -87,7 +107,7 @@ export default function Projects() {
                         </div>
                     </ScrollStackItem>
                 </ScrollStack>
-                
+                <div ref={endRef} className="h-20 w-full" />
             </div>
         </div>
     )
