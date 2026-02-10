@@ -33,3 +33,25 @@ body {
   -ms-overflow-style: none;  /* IE & Edge */
   scrollbar-width: none;     /* Firefox */
 }
+
+/* index.css */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  /* Ye property ensure krti h ki animation scroll k sath trigger ho */
+  view-timeline-name: --item-reveal;
+  view-timeline-axis: block;
+  animation: reveal-up linear both;
+  animation-timeline: --item-reveal;
+  /* Jab element screen k 10% entry pr ho tab start ho aur 40% pr khatam */
+  animation-range: entry 10% cover 40%;
+}
