@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Intro() {
     return (
-        <div id="home" className='relative w-full h-fit flex flex-col justify-center overflow-hidden lg:mt-10'>
+        <div id="home" className='relative w-full max-w-screen h-fit flex flex-col justify-center overflow-hidden lg:mt-10'>
             
             <div className='w-full mx-auto px-7.5 lg:p-10 flex flex-col gap-20'>
                 
@@ -10,7 +10,7 @@ export default function Intro() {
                     <span className='text-[65px] md:text-[100px] lg:text-[130px] font-serif italic leading-none text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]'>
                         Software
                     </span>
-                    <span className='text-[80px] md:text-[120px] lg:text-[140px] font-black font-semibold leading-[0.8] text-white uppercase tracking-tighter'>
+                    <span className='text-[60px] md:text-[120px] lg:text-[140px] font-black font-semibold leading-[0.8] text-white uppercase tracking-tighter'>
                         Developer
                     </span>
                 </div>
