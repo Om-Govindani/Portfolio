@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Intro() {
     return (
-        <div id="home" className='relative w-full max-w-screen h-fit flex flex-col justify-center overflow-hidden lg:mt-10'>
+        <div id="home" className='relative w-full max-w-screen h-fit flex flex-col justify-center lg:mt-10'>
             
             <div className='w-full mx-auto px-7.5 lg:p-10 flex flex-col gap-20'>
                 
